@@ -8,6 +8,11 @@ hitam='\033[1;30m'
 cyan='\033[1;36m'
 reset='\033[0m'
 
+# User & Pass
+user="invictus"
+pass="12345"
+
+# Login Sistem
 clear
 echo -e "${biru}"
 echo "██╗   ██╗ █████╗ ███╗   ██╗"
@@ -17,12 +22,22 @@ echo "██║   ██║██╔══██║██║╚██╗██�
 echo "╚██████╔╝██║  ██║██║ ╚████║"
 echo " ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝"
 echo -e "${reset}"
-sleep 1
 echo -e "${pink}TOOLS : YAN-INVICTUS BETA TESTING${reset}"
 echo -e "${hijau}DEVELOPER : YANOFFICIALID${reset}"
-sleep 1
+echo ""
 
-# Menu
+read -p "Username: " input_user
+read -p "Password: " input_pass
+
+if [[ $input_user == $user && $input_pass == $pass ]]; then
+    echo -e "${hijau}Login Berhasil!${reset}"
+    sleep 1
+else
+    echo -e "${pink}Login Gagal! Keluar...${reset}"
+    exit
+fi
+
+# Menu Utama
 while true; do
 echo ""
 echo -e "${cyan}PILIH FITUR:${reset}"
